@@ -1,0 +1,110 @@
+{
+  "name": "path-complete",
+  "displayName": "@ Path Complete",
+  "description": "Autocomplete file paths in any file by typing @",
+  "version": "0.1.0",
+  "publisher": "casper",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/casper/VSCode-Extension-path-complete"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "path",
+    "autocomplete",
+    "file",
+    "completion",
+    "at-sign"
+  ],
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "@ Path Complete",
+      "properties": {
+        "pathComplete.triggerCharacter": {
+          "type": "string",
+          "default": "@",
+          "maxLength": 1,
+          "description": "Character that triggers file path autocomplete."
+        },
+        "pathComplete.ignoredPatterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "**/node_modules/**",
+            "**/.git/**",
+            "**/dist/**",
+            "**/build/**",
+            "**/.DS_Store"
+          ],
+          "description": "Glob patterns for files/folders to exclude from suggestions."
+        },
+        "pathComplete.maxResults": {
+          "type": "number",
+          "default": 200,
+          "minimum": 10,
+          "maximum": 5000,
+          "description": "Maximum number of file path suggestions to display."
+        },
+        "pathComplete.pathStyle": {
+          "type": "string",
+          "enum": [
+            "relative-to-workspace",
+            "relative-to-file",
+            "absolute"
+          ],
+          "default": "relative-to-workspace",
+          "description": "Style of paths inserted on completion."
+        },
+        "pathComplete.removeTriggerCharacter": {
+          "type": "boolean",
+          "default": true,
+          "description": "Remove the trigger character when a completion is accepted."
+        },
+        "pathComplete.showFileIcons": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use VSCode file-type icons in the completion list."
+        },
+        "pathComplete.includeDirectories": {
+          "type": "boolean",
+          "default": false,
+          "description": "Include directory paths (not just files) in suggestions."
+        },
+        "pathComplete.respectGitignore": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically exclude files matched by .gitignore."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node esbuild.mjs --production",
+    "watch": "node esbuild.mjs --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.7.0"
+  }
+}
