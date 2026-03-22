@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/casper/VSCode-Extension-path-complete"
+    "url": "https://github.com/Wcc723/VSCode-Extension-path-complete"
   },
   "engines": {
     "vscode": "^1.85.0"

@@ -2,6 +2,10 @@
 
 Autocomplete file paths in any file by typing `@`. Works in all file types, including unsaved/untitled files.
 
+## Demo
+
+![demo](https://raw.githubusercontent.com/Wcc723/VSCode-Extension-path-complete/main/images/demo.gif)
+
 ## Features
 
 - Type `@` to trigger file path suggestions from your workspace
