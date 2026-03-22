@@ -1,6 +1,10 @@
 # @ Path Complete
 
+[![VS Marketplace](https://img.shields.io/visual-studio-marketplace/v/casper.path-complete)](https://marketplace.visualstudio.com/items?itemName=casper.path-complete)
+
 Autocomplete file paths in any file by typing `@`. Works in all file types, including unsaved/untitled files.
+
+[Install from VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=casper.path-complete)
 
 ## Demo
 
